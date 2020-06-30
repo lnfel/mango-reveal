@@ -92,7 +92,7 @@ jQuery(document).ready(function($) {
     else var str = $(this).serialize();
     var action = $(this).attr('action');
     if( ! action ) {
-      action = 'contactform/contactform.php';
+      action = 'mail.php';
     }
     $.ajax({
       type: "POST",
@@ -100,7 +100,7 @@ jQuery(document).ready(function($) {
       data: str,
       success: function(msg) {
         // alert(msg);
-        if (msg == 'OK') {
+        /*if (msg == 'OK') {
           $("#sendmessage").addClass("show");
           $("#errormessage").removeClass("show");
           $('.contactForm').find("input, textarea").val("");
@@ -108,7 +108,33 @@ jQuery(document).ready(function($) {
           $("#sendmessage").removeClass("show");
           $("#errormessage").addClass("show");
           $('#errormessage').html(msg);
+        }*/
+        var response = JSON.parse(msg);
+
+        if (response.status === "success") {
+          var alert = `<div class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong>Message sent! </strong><span id="response"></span>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+          </div>`;
+        } else {
+          var alert = `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>Sending message failed! </strong><span id="response"></span>
+          <span>Contact us here: <u><a href="tel:+63945736120" class="text-dark">+63 945 736 120</a></u></span>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+          </div>`;
         }
+        
+        $(".form").prepend(alert);
+        $("#response").text(response.message);
+      },
+      error: {
+
+      },
+      complete: function(msg) {
 
       }
     });

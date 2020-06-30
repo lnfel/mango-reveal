@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
  <head>
@@ -674,9 +677,36 @@
 
     <div class="container">
      <div class="form">
+      <!-- alert -->
+      <?php if (array_key_exists('notice',$_SESSION) && !empty($_SESSION['notice'])) { 
+        //echo '<div class="alert alert-success alert-dismissible fade show" role="alert">';
+        //echo "<strong>Message sent! </strong>";
+        //echo $_SESSION["notice"];
+        //unset($_SESSION['notice']);
+        //session_destroy();
+        //echo '<button type="button" class="close" data-dismiss="alert" aria-label="Close">';
+        //echo '<span aria-hidden="true">&times;</span>';
+        //echo "</button>";
+        //echo "</div>";
+      ?>
+      <?php } elseif (array_key_exists('error',$_SESSION) && !empty($_SESSION['error'])) {
+        //echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">';
+        //echo $_SESSION["error"];
+        //echo "<p>You can also leave us a text message: +63 945 736 120</p>";
+        //unset($_SESSION['error']);
+        //session_destroy();
+        //echo '<button type="button" class="close" data-dismiss="alert" aria-label="Close">';
+        //echo '<span aria-hidden="true">&times;</span>';
+        //echo "</button>";
+        //echo "</div>";
+      ?>
+      <?php } else {
+        // do nothing
+      } ?>
+      <!-- alert end -->
       <div id="sendmessage">Your message has been sent. Thank you!</div>
       <div id="errormessage"></div>
-      <form action="" method="post" role="form" class="contactForm">
+      <form method="post" role="form" class="contactForm">
        <div class="form-row">
         <div class="form-group col-md-6">
          <input
