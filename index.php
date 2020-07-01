@@ -71,23 +71,25 @@
      <!-- <a href="#body"><img src="img/logo.png" alt="" title="" /></a>-->
     </div>
 
-    <nav id="nav-menu-container">
-     <ul class="nav-menu">
-      <li class="menu-active"><a href="#body">Home</a></li>
-      <li><a href="#about">About Us</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#team">Team</a></li>
-      <li class="menu-has-children">
-       <a href="">Drop Down</a>
-       <ul>
-        <li><a href="#">Drop Down 1</a></li>
-        <li><a href="#">Drop Down 3</a></li>
-        <li><a href="#">Drop Down 4</a></li>
-        <li><a href="#">Drop Down 5</a></li>
-       </ul>
+    <nav id="nav-menu-container" class="navbar navbar-expand-lg">
+     <ul class="navbar-nav">
+      <li class="nav-item menu-active"><a href="#body" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="#about" class="nav-link">About Us</a></li>
+      <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+      <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
+      <li class="nav-item"><a href="#team" class="nav-link">Team</a></li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-flip="false" data-boundary="" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <ul class="dropdown-menu" style="" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </ul>
       </li>
-      <li><a href="#contact">Contact</a></li>
+      <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
      </ul>
     </nav>
     <!-- #nav-menu-container -->
@@ -552,22 +554,6 @@
 
       <div class="col-lg-3 col-md-6">
        <div class="member">
-        <div class="pic"><img src="img/team-2.jpg" alt="" /></div>
-        <div class="details">
-         <h4>Mark Alvin Mangune</h4>
-         <span>Project Manager</span>
-         <div class="social">
-          <a href=""><i class="fa fa-twitter"></i></a>
-          <a href=""><i class="fa fa-facebook"></i></a>
-          <a href=""><i class="fa fa-google-plus"></i></a>
-          <a href=""><i class="fa fa-linkedin"></i></a>
-         </div>
-        </div>
-       </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6">
-       <div class="member">
         <div class="pic"><img src="img/team-3.jpg" alt="" /></div>
         <div class="details">
          <h4>Dale Ryan Aldover</h4>
@@ -584,7 +570,7 @@
 
       <div class="col-lg-3 col-md-6">
        <div class="member">
-        <div class="pic"><img src="img/team-4.jpg" alt="" /></div>
+        <div class="pic"><img src="img/team-2.jpg" alt="" /></div>
         <div class="details">
          <h4>Rov Delayun</h4>
          <span>Front-end Design</span>

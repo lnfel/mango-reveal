@@ -49,8 +49,10 @@ jQuery(document).ready(function ($) {
   var $mobile_nav = $("#nav-menu-container").clone().prop({
    id: "mobile-nav",
   });
+  $mobile_nav.removeClass("navbar-expand-lg");
+  $mobile_nav.addClass("d-flex align-items-center justify-content-center");
   $mobile_nav.find("> ul").attr({
-   class: "",
+   class: "navbar-nav p-0",
    id: "",
   });
   $("body").append($mobile_nav);
@@ -58,14 +60,14 @@ jQuery(document).ready(function ($) {
    '<button type="button" id="mobile-nav-toggle"><i class="fa fa-bars"></i></button>'
   );
   $("body").append('<div id="mobile-body-overly"></div>');
-  $("#mobile-nav")
-   .find(".menu-has-children")
-   .prepend('<i class="fa fa-chevron-down"></i>');
+  //$("#mobile-nav")
+  // .find(".menu-has-children")
+  // .prepend('<i class="fa fa-chevron-down"></i>');
 
   $(document).on("click", ".menu-has-children i", function (e) {
-   $(this).next().toggleClass("menu-item-active");
-   $(this).nextAll("ul").eq(0).slideToggle();
-   $(this).toggleClass("fa-chevron-up fa-chevron-down");
+   //$(this).next().toggleClass("menu-item-active");
+   //$(this).nextAll("ul").eq(0).slideToggle();
+   //$(this).toggleClass("fa-chevron-up fa-chevron-down");
   });
 
   function handleOpen(e) {

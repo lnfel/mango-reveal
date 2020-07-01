@@ -367,10 +367,10 @@ h6 {
 
 /* Nav Meu Styling */
 
-.nav-menu a {
- padding: 10px 8px;
- text-decoration: none;
- display: inline-block;
+.navbar-nav a {
+ /*padding: 10px 8px;*/
+ /*text-decoration: none;*/
+ /*display: inline-block;*/
  color: #555;
  font-family: "Raleway", sans-serif;
  font-weight: 700;
@@ -378,9 +378,26 @@ h6 {
  outline: none;
 }
 
-.nav-menu li:hover > a,
-.nav-menu .menu-active > a {
+.dropdown-menu {
+  border: none;
+}
+
+.navbar-nav a.dropdown-item:hover, .navbar-nav a.dropdown-item:focus {
+  color: rgba(254, 253, 112, 1);
+}
+
+.navbar-nav a.dropdown-item:hover {
+  background-color: #0c2e8a;
+}
+
+.navbar-nav li:hover > a,
+.navbar-nav .menu-active > a {
  color: rgb(255, 194, 56); /*#50d8af*/
+}
+
+.is-sticky #header .navbar-nav li:hover > a,
+.is-sticky #header .navbar-nav .menu-active > a {
+  color: #0c2e8a;
 }
 
 .nav-menu > li {
@@ -477,7 +494,7 @@ h6 {
  transition: 0.4s;
 }
 
-#mobile-nav ul {
+#mobile-nav ul:first-child {
  padding: 0;
  margin: 0;
  list-style: none;
@@ -486,28 +503,48 @@ h6 {
 
 #mobile-nav ul li {
  position: relative;
- text-align: center;
+ /*text-align: center;*/
+ margin-top: 10px;
 }
 
-#mobile-nav ul li a {
- color: #fff;
- font-family: "Comfortaa";
+#mobile-nav ul li > a {
+ color: #0c2e8a;
+ font-family: "Montserrat";
+ font-weight: 700;
  font-size: 2rem; /*16px*/
  overflow: hidden;
- padding: 10px 22px 10px 15px;
+ padding: 10px 5px 10px 5px;
  position: relative;
  text-decoration: none;
  width: 100%;
- display: block;
+ display: inline;
  outline: none;
+ transition: all 0.3s ease-in;
 }
 
-#mobile-nav ul li a:hover {
- color: #fff;
+#mobile-nav ul li > a:before {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 0px;
+  z-index: -1;
+  width: 100%;
+  height: 0%;
+  background-color: #f88f6f;
+  transition: all 0.3s ease-in;
+}
+
+#mobile-nav ul li > a:hover:before {
+  height: 40%;
+}
+
+#mobile-nav ul li > a:hover {
+ color: #0c2e8a;
+ /*background-image: linear-gradient(transparent 0%, transparent 45%, #f88f6f 45%, #f88f6f 85%, transparent 85%, transparent);*/
 }
 
 #mobile-nav ul li li {
- padding-left: 30px;
+ /*padding-left: 30px;*/
 }
 
 #mobile-nav ul .menu-has-children i {
@@ -525,6 +562,11 @@ h6 {
 
 #mobile-nav ul .menu-item-active {
  color: #50d8af;
+}
+
+#mobile-nav .dropdown-menu {
+  position: relative;
+  float: none;
 }
 
 #mobile-body-overly {
